@@ -1,0 +1,95 @@
+#include <stdio.h>
+#include <math.h>
+#include <ctype.h>   // for isdigit()
+
+// CHAPTER - 2 : INSTRUCTIONS & OPERATORS
+int main() {
+    // Example of type casting
+    int A = (int)1.9999;   // casting to int
+    printf("%d \n", A);
+
+    /* Solve expressions:
+       A. 5*2 - 2*3
+       B. 5*2/2*3
+       C. 5*(2/2)*3
+       D. 5 + 2/2*3
+    */
+
+    // A....(4)
+    int a = 5*2 - 2*3;
+    printf("%d \n", a);
+
+    // B...(15)
+    int b = 5*2/2*3;
+    printf("%d \n", b);
+
+    // C..(15)
+    int c = 5*(2/2)*3;
+    printf("%d \n", c);
+
+    // D..(8)
+    int d = 5 + 2/2*3;
+    printf("%d \n", d);
+
+    // Check if number is divisible by 2
+    int x;
+    printf("Enter a number: ");
+    scanf("%d", &x);
+    printf("Divisible by 2? %d \n", x % 2 == 0);
+
+    // Check if number is odd or even
+    int n;
+    printf("Enter another number: ");
+    scanf("%d", &n);
+    printf("Even=1, Odd=0 --> %d \n", n % 2 == 0);
+
+    // If it’s Sunday AND it’s snowing
+    int issunday = 1;
+    int issnowing = 1;
+    printf("Sunday and Snowing? %d \n", issunday && issnowing);
+
+    // If it’s Monday OR it’s raining
+    int monday = 0;
+    int raining = 1;
+    printf("Monday or Raining? %d \n", monday || raining);
+
+    // If a number is greater than 9 and less than 100
+    int y;
+    printf("Enter a number: ");
+    scanf("%d", &y);
+    printf("Between 10 and 99? %d \n", y > 9 && y < 100);
+
+    // The average of three numbers
+    int v, i, p;
+    float average;
+    printf("Enter three numbers: ");
+    scanf("%d %d %d", &v, &i, &p);
+    average = (v + i + p) / 3.0;
+    printf("The average of %d, %d, and %d is: %.2f\n", v, i, p, average);
+
+    // Check if given character is a digit
+    char ch;
+    printf("Enter a character: ");
+    scanf(" %c", &ch);  // Note the space before %c (important!)
+
+    if (isdigit(ch)) {
+        printf("'%c' is a digit.\n", ch);
+    } else {
+        printf("'%c' is NOT a digit.\n", ch);
+    }
+
+    // Find the smallest of three numbers
+    int s, m1, m2;
+    printf("Enter three numbers: ");
+    scanf("%d %d %d", &s, &m1, &m2);
+
+    if (s <= m1 && s <= m2) {
+        printf("The smallest number is: %d\n", s);
+    } else if (m1 <= s && m1 <= m2) {
+        printf("The smallest number is: %d\n", m1);
+    } else {
+        printf("The smallest number is: %d\n", m2);
+    }
+
+    return 0;
+}
